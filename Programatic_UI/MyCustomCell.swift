@@ -36,8 +36,6 @@ class MyCustomCell: UITableViewCell {
         return videoTextLabel
     }()
 
-    
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -54,8 +52,6 @@ class MyCustomCell: UITableViewCell {
     func set(video:Video) {
         videoTextLabel.text = video.title
     }
-    
-    
     
     func setupVideoImageViewConstraints() {
         videoImageView.translatesAutoresizingMaskIntoConstraints = false

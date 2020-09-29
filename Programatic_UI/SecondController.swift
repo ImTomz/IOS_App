@@ -24,7 +24,6 @@ class SecondController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         view.addSubview(tableView)
-        //        view.addSubview(liveChannelsLabel)
         view.backgroundColor = UIColor(red: 34/255, green: 37/255, blue: 38/255, alpha: 1)
         setupNavController()
         setupTableView()
@@ -50,7 +49,6 @@ class SecondController: UIViewController {
         setupTableViewConstraints()
         
     }
-
 
     func setupTableViewConstraints() {
 
@@ -82,7 +80,9 @@ extension SecondController: UITableViewDelegate,UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        navigationController?.pushViewController(SelectedVideoController(), animated: true)
+        let vc = SelectedVideoController()
+        vc.text = videos[indexPath.row].title
+        navigationController?.pushViewController(vc, animated: true)
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
