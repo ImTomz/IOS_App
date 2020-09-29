@@ -11,13 +11,17 @@ import UIKit
 class SecondController: UIViewController {
     
     let tableView = UITableView()
-    let videos: [Video] = [Video(title: "First title"),
+    var live: [Video] = [Video(title: "First title"),
+                         Video(title: "Second"),
+                         Video(title: "Third"),]
+    var videos: [Video] = [Video(title: "First title"),
                            Video(title: "Second"),
                            Video(title: "Third"),
                            Video(title: "Second"),
                            Video(title: "Second"),
                            Video(title: "Second"),
                            Video(title: "Second"),]
+    
     let cellId = "cellId"
     
     override func viewDidLoad() {
@@ -26,6 +30,7 @@ class SecondController: UIViewController {
         view.addSubview(tableView)
         view.backgroundColor = UIColor(red: 34/255, green: 37/255, blue: 38/255, alpha: 1)
         setupNavController()
+        
         setupTableView()
     }
     
@@ -46,6 +51,7 @@ class SecondController: UIViewController {
         tableView.dataSource = self
         tableView.backgroundColor = UIColor(red: 34/255, green: 37/255, blue: 38/255, alpha: 1)
         tableView.register(MyCustomCell.self, forCellReuseIdentifier: cellId)
+        tableView.contentInset.bottom = 10
         setupTableViewConstraints()
         
     }
@@ -56,7 +62,7 @@ class SecondController: UIViewController {
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 25).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 25).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
 
     }
 
@@ -65,13 +71,20 @@ class SecondController: UIViewController {
 extension SecondController: UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if (section == 0) {
+            return live.count
+        }
         return videos.count
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId) as! MyCustomCell
-        let video = videos[indexPath.row]
+        let video = indexPath.section == 0 ? live[indexPath.row] : videos[indexPath.row]
         let bgColorView = UIView()
         bgColorView.backgroundColor = UIColor.gray
         cell.selectedBackgroundView = bgColorView
@@ -81,7 +94,7 @@ extension SecondController: UITableViewDelegate,UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = SelectedVideoController()
-        vc.text = videos[indexPath.row].title
+        vc.text = live[indexPath.row].title
         navigationController?.pushViewController(vc, animated: true)
     }
 
@@ -91,7 +104,7 @@ extension SecondController: UITableViewDelegate,UITableViewDataSource {
 
         let label = UILabel()
         label.frame = CGRect(x: 15, y: 5, width: headerView.frame.width-12, height: headerView.frame.height-12)
-        label.text = "LIVE CHANNELS"
+        label.text = section == 0 ? "LIVE CHANNELS" : "VIDEOS"
         label.textColor = .white
         label.font = UIFont.boldSystemFont(ofSize: 14)
 
