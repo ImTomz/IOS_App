@@ -14,6 +14,7 @@ class SecondController: UIViewController {
     var live: [Video] = [Video(title: "First title"),
                          Video(title: "Second"),
                          Video(title: "Third"),]
+    
     var videos: [Video] = [Video(title: "First title"),
                            Video(title: "Second"),
                            Video(title: "Third"),
@@ -23,6 +24,7 @@ class SecondController: UIViewController {
                            Video(title: "Second"),]
     
     let cellId = "cellId"
+    let collectionCellId = "collectionCellId"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +32,6 @@ class SecondController: UIViewController {
         view.addSubview(tableView)
         view.backgroundColor = UIColor(red: 34/255, green: 37/255, blue: 38/255, alpha: 1)
         setupNavController()
-        
         setupTableView()
     }
     
@@ -46,11 +47,11 @@ class SecondController: UIViewController {
     func setupTableView() {
         
         tableView.sectionHeaderHeight = 30
-        tableView.rowHeight = 100
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = UIColor(red: 34/255, green: 37/255, blue: 38/255, alpha: 1)
         tableView.register(MyCustomCell.self, forCellReuseIdentifier: cellId)
+        tableView.register(CollectionInTableViewCell.self, forCellReuseIdentifier: collectionCellId)
         tableView.contentInset.bottom = 10
         setupTableViewConstraints()
         
@@ -72,30 +73,52 @@ extension SecondController: UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (section == 0) {
+            return 1
+        }
+        else if (section == 1){
             return live.count
         }
         return videos.count
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return indexPath.section == 0 ? 220 : 100
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
+        
+        if(indexPath.section == 0) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: collectionCellId) as! CollectionInTableViewCell
+            return cell
+        }
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId) as! MyCustomCell
-        let video = indexPath.section == 0 ? live[indexPath.row] : videos[indexPath.row]
+        let video:Video?
+        switch indexPath.section {
+        case 1:
+            video = live[indexPath.row]
+        case 2:
+            video = videos[indexPath.row]
+        default:
+            video = nil
+        }
         let bgColorView = UIView()
         bgColorView.backgroundColor = UIColor.gray
         cell.selectedBackgroundView = bgColorView
-        cell.set(video: video)
+        cell.set(video: video!)
+
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = SelectedVideoController()
-        vc.text = live[indexPath.row].title
-        navigationController?.pushViewController(vc, animated: true)
+        if (indexPath.section >= 1){
+            let vc = SelectedVideoController()
+            vc.text = live[indexPath.row].title
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -104,7 +127,17 @@ extension SecondController: UITableViewDelegate,UITableViewDataSource {
 
         let label = UILabel()
         label.frame = CGRect(x: 15, y: 5, width: headerView.frame.width-12, height: headerView.frame.height-12)
-        label.text = section == 0 ? "LIVE CHANNELS" : "VIDEOS"
+        switch section {
+        case 0:
+            label.text = "FOLLOWED CATEGORIES"
+        case 1:
+            label.text = "LIVE CHANNELS"
+        case 2:
+            label.text = "VIDEOS"
+        default:
+            label.text = ""
+        }
+        
         label.textColor = .white
         label.font = UIFont.boldSystemFont(ofSize: 14)
 
