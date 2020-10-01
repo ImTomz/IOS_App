@@ -35,6 +35,15 @@ class FollowingViewController: UIViewController {
         setupTableView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        //Clear selection after view appear
+        if let selectionIndexPath = self.tableView.indexPathForSelectedRow {
+            self.tableView.deselectRow(at: selectionIndexPath, animated: animated)
+        }
+    }
+    
     func setupNavController() {
         let navBar = navigationController?.navigationBar
         navBar?.prefersLargeTitles = true
