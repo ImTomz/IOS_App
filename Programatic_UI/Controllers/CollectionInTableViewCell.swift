@@ -23,7 +23,7 @@ class CollectionInTableViewCell: UITableViewCell {
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.translatesAutoresizingMaskIntoConstraints = false
         cv.register(CategoryCell.self, forCellWithReuseIdentifier: "cellId")
-        cv.backgroundColor = UIColor(red: 34/255, green: 37/255, blue: 38/255, alpha: 1)
+        cv.backgroundColor = UIColor(named: "BackgroundColor")
         cv.showsHorizontalScrollIndicator = false
         return cv
     }()

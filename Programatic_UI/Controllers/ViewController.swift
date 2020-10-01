@@ -29,8 +29,9 @@ class ViewController: UIViewController {
         tabBarVC.setViewControllers(viewControllers, animated: false)
         tabBarVC.modalPresentationStyle = .fullScreen
         tabBarVC.tabBar.isTranslucent = false
-        tabBarVC.tabBar.barTintColor = UIColor(red: 34/255, green: 37/255, blue: 38/255, alpha: 1)
-        tabBarVC.tabBar.tintColor = .white
+        tabBarVC.tabBar.barTintColor = UIColor(named: "BarColor")
+        tabBarVC.tabBar.tintColor = UIColor(named: "Purple")
+        tabBarVC.tabBar.unselectedItemTintColor = UIColor(named: "SubTextColor")
         
         let images = ["heart","person"]
         let selectedImages = ["heart.fill","person.fill"]
@@ -42,6 +43,7 @@ class ViewController: UIViewController {
             items![x].image = UIImage(systemName: images[x])
         }
         for x in 0..<items!.count {
+            
             items![x].selectedImage = UIImage(systemName: selectedImages[x])
         }
         return tabBarVC

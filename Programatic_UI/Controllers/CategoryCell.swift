@@ -20,7 +20,7 @@ class CategoryCell: UICollectionViewCell {
     private let title : UILabel = {
         let title = UILabel()
         title.text = "Title"
-        title.textColor = .white
+        title.textColor = UIColor(named: "TextColor")
         title.translatesAutoresizingMaskIntoConstraints = false
         title.font = UIFont.boldSystemFont(ofSize: 15)
         return title

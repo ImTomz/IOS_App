@@ -12,7 +12,7 @@ class ProfileController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(red: 34/255, green: 37/255, blue: 38/255, alpha: 1)
+        view.backgroundColor = UIColor(named: "BackgroundColor")
         
         // Do any additional setup after loading the view.
         setupNavController()
@@ -21,10 +21,6 @@ class ProfileController: UIViewController {
     func setupNavController() {
         let nav = navigationController?.navigationBar
         nav?.prefersLargeTitles = true
-        nav?.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        nav?.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-
-
         self.title = "Profile"
     }
 }

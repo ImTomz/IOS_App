@@ -29,9 +29,9 @@ class FollowingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.title = "Following"
         view.addSubview(tableView)
-        view.backgroundColor = UIColor(red: 34/255, green: 37/255, blue: 38/255, alpha: 1)
-        setupNavController()
+        view.backgroundColor = UIColor(named: "BackgroundColor")
         setupTableView()
     }
     
@@ -43,25 +43,18 @@ class FollowingViewController: UIViewController {
             self.tableView.deselectRow(at: selectionIndexPath, animated: animated)
         }
     }
-    
-    func setupNavController() {
-        let navBar = navigationController?.navigationBar
-        navBar?.prefersLargeTitles = true
-        navBar?.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        navBar?.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        navBar?.barTintColor = UIColor(red: 34/255, green: 37/255, blue: 38/255, alpha: 1)
-        self.title = "Following"
-    }
+
     
     func setupTableView() {
         
         tableView.sectionHeaderHeight = 30
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.backgroundColor = UIColor(red: 34/255, green: 37/255, blue: 38/255, alpha: 1)
+        tableView.backgroundColor = UIColor(named: "BackgroundColor")
         tableView.register(VideoCell.self, forCellReuseIdentifier: cellId)
         tableView.register(CollectionInTableViewCell.self, forCellReuseIdentifier: collectionCellId)
         tableView.contentInset.bottom = 10
+        tableView.separatorStyle = .none
         setupTableViewConstraints()
         
     }
@@ -132,10 +125,11 @@ extension FollowingViewController: UITableViewDelegate,UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 30))
-        headerView.backgroundColor = UIColor(red: 34/255, green: 37/255, blue: 38/255, alpha: 1)
+        headerView.backgroundColor = UIColor(named: "BackgroundColor")
 
         let label = UILabel()
         label.frame = CGRect(x: 15, y: 5, width: headerView.frame.width-12, height: headerView.frame.height-12)
+        
         switch section {
         case 0:
             label.text = "FOLLOWED CATEGORIES"
@@ -147,7 +141,7 @@ extension FollowingViewController: UITableViewDelegate,UITableViewDataSource {
             label.text = ""
         }
         
-        label.textColor = .white
+        label.textColor = UIColor(named: "SubTextColor")
         label.font = UIFont.boldSystemFont(ofSize: 14)
 
 

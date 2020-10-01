@@ -23,8 +23,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         
-        UINavigationBar.appearance().barStyle = .black
-        UINavigationBar.appearance().backgroundColor = UIColor(red: 34/255, green: 37/255, blue: 38/255, alpha: 1)
+        UINavigationBar.appearance().backgroundColor = UIColor(named: "BackgroundColor")
+        UINavigationBar.appearance().tintColor = .red
+        UINavigationBar.appearance().prefersLargeTitles = true
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(named: "TextColor")!]
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(named: "TextColor")!]
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

@@ -13,7 +13,7 @@ class VideoCell: UITableViewCell {
     private let videoImageView: UIImageView = {
         let videoImageView = UIImageView()
         videoImageView.clipsToBounds = true
-        videoImageView.backgroundColor = .white
+        videoImageView.backgroundColor = UIColor(named: "TextColor")
         return videoImageView
     }()
     
@@ -21,7 +21,7 @@ class VideoCell: UITableViewCell {
         let videoTextLabel = UILabel()
         videoTextLabel.adjustsFontSizeToFitWidth = true
         videoTextLabel.numberOfLines = 0
-        videoTextLabel.textColor = .white
+        videoTextLabel.textColor = UIColor(named: "TextColor")
         videoTextLabel.font = UIFont.boldSystemFont(ofSize: 20)
         return videoTextLabel
     }()
@@ -30,7 +30,7 @@ class VideoCell: UITableViewCell {
         let videoTextLabel = UILabel()
         videoTextLabel.adjustsFontSizeToFitWidth = true
         videoTextLabel.numberOfLines = 0
-        videoTextLabel.textColor = .white
+        videoTextLabel.textColor = UIColor(named: "SubTextColor")
         videoTextLabel.font = videoTextLabel.font.withSize(12)
         videoTextLabel.text = "Description"
         return videoTextLabel
@@ -42,7 +42,7 @@ class VideoCell: UITableViewCell {
         addSubview(videoTextLabel)
         addSubview(videoImageView)
         addSubview(videoDescriptionLabel)
-        self.backgroundColor = UIColor(red: 34/255, green: 37/255, blue: 38/255, alpha: 1)
+        self.backgroundColor = UIColor(named: "BackgroundColor")
 
         setupVideoImageViewConstraints()
         setupVideoTextLabelConstraints()
