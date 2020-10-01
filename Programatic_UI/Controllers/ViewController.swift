@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     
     private let tabBarVC: UITabBarController = {
         let tabBarVC = UITabBarController()
-        let vc1 = UINavigationController(rootViewController: SecondController())
+        let vc1 = UINavigationController(rootViewController: FollowingViewController())
         let vc2 = UINavigationController(rootViewController: ProfileController())
         let viewControllers = [vc1,vc2]
         

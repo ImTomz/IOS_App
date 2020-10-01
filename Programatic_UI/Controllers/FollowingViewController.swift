@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondController: UIViewController {
+class FollowingViewController: UIViewController {
     
     let tableView = UITableView()
     var live: [Video] = [Video(title: "First title"),
@@ -50,7 +50,7 @@ class SecondController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = UIColor(red: 34/255, green: 37/255, blue: 38/255, alpha: 1)
-        tableView.register(MyCustomCell.self, forCellReuseIdentifier: cellId)
+        tableView.register(VideoCell.self, forCellReuseIdentifier: cellId)
         tableView.register(CollectionInTableViewCell.self, forCellReuseIdentifier: collectionCellId)
         tableView.contentInset.bottom = 10
         setupTableViewConstraints()
@@ -69,7 +69,7 @@ class SecondController: UIViewController {
 
 }
 
-extension SecondController: UITableViewDelegate,UITableViewDataSource {
+extension FollowingViewController: UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (section == 0) {
@@ -95,7 +95,7 @@ extension SecondController: UITableViewDelegate,UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: collectionCellId) as! CollectionInTableViewCell
             return cell
         }
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId) as! MyCustomCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId) as! VideoCell
         let video:Video?
         switch indexPath.section {
         case 1:

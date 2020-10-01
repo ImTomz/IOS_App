@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5A330F3924C5C99400C994C5 /* SecondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A330F3824C5C99400C994C5 /* SecondController.swift */; };
-		5A330F3B24C5D65000C994C5 /* MyCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A330F3A24C5D65000C994C5 /* MyCustomCell.swift */; };
+		5A330F3924C5C99400C994C5 /* FollowingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A330F3824C5C99400C994C5 /* FollowingViewController.swift */; };
+		5A330F3B24C5D65000C994C5 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A330F3A24C5D65000C994C5 /* VideoCell.swift */; };
 		5A330F3E24C5E9C700C994C5 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A330F3D24C5E9C700C994C5 /* Video.swift */; };
 		5AA918512524BC6A00450481 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA918502524BC6A00450481 /* CategoryCell.swift */; };
 		5AA918542524C86F00450481 /* CollectionInTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA918532524C86F00450481 /* CollectionInTableViewCell.swift */; };
@@ -22,8 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5A330F3824C5C99400C994C5 /* SecondController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondController.swift; sourceTree = "<group>"; };
-		5A330F3A24C5D65000C994C5 /* MyCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomCell.swift; sourceTree = "<group>"; };
+		5A330F3824C5C99400C994C5 /* FollowingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingViewController.swift; sourceTree = "<group>"; };
+		5A330F3A24C5D65000C994C5 /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
 		5A330F3D24C5E9C700C994C5 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		5AA918502524BC6A00450481 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		5AA918532524C86F00450481 /* CollectionInTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionInTableViewCell.swift; sourceTree = "<group>"; };
@@ -61,8 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				5AF2353C24C5C135008C3F53 /* ViewController.swift */,
-				5A330F3A24C5D65000C994C5 /* MyCustomCell.swift */,
-				5A330F3824C5C99400C994C5 /* SecondController.swift */,
+				5A330F3A24C5D65000C994C5 /* VideoCell.swift */,
+				5A330F3824C5C99400C994C5 /* FollowingViewController.swift */,
 				5AE212E1251FB166006832FC /* ProfileController.swift */,
 				5AE212E52520D566006832FC /* SelectedVideoController.swift */,
 				5AA918502524BC6A00450481 /* CategoryCell.swift */,
@@ -175,9 +175,9 @@
 				5AF2353D24C5C135008C3F53 /* ViewController.swift in Sources */,
 				5A330F3E24C5E9C700C994C5 /* Video.swift in Sources */,
 				5AA918542524C86F00450481 /* CollectionInTableViewCell.swift in Sources */,
-				5A330F3B24C5D65000C994C5 /* MyCustomCell.swift in Sources */,
+				5A330F3B24C5D65000C994C5 /* VideoCell.swift in Sources */,
 				5AE212E62520D566006832FC /* SelectedVideoController.swift in Sources */,
-				5A330F3924C5C99400C994C5 /* SecondController.swift in Sources */,
+				5A330F3924C5C99400C994C5 /* FollowingViewController.swift in Sources */,
 				5AF2353924C5C135008C3F53 /* AppDelegate.swift in Sources */,
 				5AF2353B24C5C135008C3F53 /* SceneDelegate.swift in Sources */,
 				5AA918512524BC6A00450481 /* CategoryCell.swift in Sources */,

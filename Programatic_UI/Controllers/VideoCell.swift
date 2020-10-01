@@ -8,7 +8,7 @@
 
 import UIKit    
 
-class MyCustomCell: UITableViewCell {
+class VideoCell: UITableViewCell {
     
     private let videoImageView: UIImageView = {
         let videoImageView = UIImageView()
