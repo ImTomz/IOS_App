@@ -24,8 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.makeKeyAndVisible()
         
         UINavigationBar.appearance().backgroundColor = UIColor(named: "BackgroundColor")
-        UINavigationBar.appearance().tintColor = .red
-        UINavigationBar.appearance().prefersLargeTitles = true
+        UINavigationBar.appearance().tintColor = UIColor(named: "Purple")
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(named: "TextColor")!]
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(named: "TextColor")!]
     }

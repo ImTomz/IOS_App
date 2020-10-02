@@ -14,6 +14,7 @@ class CategoryCell: UICollectionViewCell {
         image.backgroundColor = .black
         image.clipsToBounds = true
         image.translatesAutoresizingMaskIntoConstraints = false
+        image.backgroundColor = UIColor(named: "TextColor")
         return image
     }()
     
@@ -85,9 +86,9 @@ class CategoryCell: UICollectionViewCell {
     func setupViewersIconConstraints() {
         
         viewerIcon.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        viewerIcon.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 6).isActive = true
-        viewerIcon.heightAnchor.constraint(equalToConstant: 12).isActive = true
-        viewerIcon.widthAnchor.constraint(equalToConstant: 12).isActive = true
+        viewerIcon.centerYAnchor.constraint(equalTo: viewersLabel.centerYAnchor).isActive = true
+        viewerIcon.heightAnchor.constraint(equalToConstant: 9).isActive = true
+        viewerIcon.widthAnchor.constraint(equalToConstant: 9).isActive = true
     }
     
     required init?(coder: NSCoder) {
