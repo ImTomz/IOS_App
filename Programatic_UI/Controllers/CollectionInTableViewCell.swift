@@ -12,6 +12,12 @@ class CollectionInTableViewCell: UITableViewCell {
     
     weak var delegate:CategoryRowDelegate?
     
+    var categories: [Category] = [Category(game: "World of Warcraft", viewers: "27K"),
+                                  Category(game: "League of Legends", viewers: "57K"),
+                                  Category(game: "Fortnite", viewers: "32K"),
+                                  Category(game: "Among us", viewers: "25K"),
+                                  Category(game: "Just Chatting", viewers: "156K"),]
+    
     fileprivate let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 120.0,height: 200.0)
@@ -62,13 +68,16 @@ extension CollectionInTableViewCell: UICollectionViewDelegate, UICollectionViewD
     
     // Number of items in section
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        return categories.count
     }
     
     // Cell for item
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! CategoryCell
-        // Configure the cell
+        let category:Category?
+        category = categories[indexPath.item]
+        cell.setGame(category: category!)
+        cell.setViewers(category: category!)
         return cell
     }
     

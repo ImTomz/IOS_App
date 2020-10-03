@@ -59,6 +59,14 @@ class CategoryCell: UICollectionViewCell {
         setupViewersIconConstraints()
     }
     
+    func setGame(category: Category) {
+        title.text = category.game
+    }
+    
+    func setViewers(category: Category) {
+        viewersLabel.text = category.viewers
+    }
+    
     func setupImageConstraints() {
         
         image.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
@@ -71,7 +79,7 @@ class CategoryCell: UICollectionViewCell {
         
         title.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         title.topAnchor.constraint(equalTo: image.bottomAnchor, constant: 6).isActive = true
-        title.heightAnchor.constraint(equalToConstant: 12).isActive = true
+        title.heightAnchor.constraint(equalToConstant: 16).isActive = true
         title.widthAnchor.constraint(equalToConstant: 120).isActive = true
     }
     

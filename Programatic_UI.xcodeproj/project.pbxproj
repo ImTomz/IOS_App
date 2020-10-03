@@ -11,6 +11,7 @@
 		5A330F3B24C5D65000C994C5 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A330F3A24C5D65000C994C5 /* VideoCell.swift */; };
 		5A330F3E24C5E9C700C994C5 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A330F3D24C5E9C700C994C5 /* Video.swift */; };
 		5A5A96232528BC1600A295BC /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5A96222528BC1600A295BC /* Protocols.swift */; };
+		5A5A9629252927B600A295BC /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5A9628252927B600A295BC /* Category.swift */; };
 		5A662BC92527A46F0073D8F1 /* SelectedCategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A662BC82527A46F0073D8F1 /* SelectedCategoryController.swift */; };
 		5AA918512524BC6A00450481 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA918502524BC6A00450481 /* CategoryCell.swift */; };
 		5AA918542524C86F00450481 /* CollectionInTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA918532524C86F00450481 /* CollectionInTableViewCell.swift */; };
@@ -28,6 +29,7 @@
 		5A330F3A24C5D65000C994C5 /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
 		5A330F3D24C5E9C700C994C5 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		5A5A96222528BC1600A295BC /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		5A5A9628252927B600A295BC /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		5A662BC82527A46F0073D8F1 /* SelectedCategoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedCategoryController.swift; sourceTree = "<group>"; };
 		5AA918502524BC6A00450481 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		5AA918532524C86F00450481 /* CollectionInTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionInTableViewCell.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				5A330F3D24C5E9C700C994C5 /* Video.swift */,
+				5A5A9628252927B600A295BC /* Category.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 				5A330F3B24C5D65000C994C5 /* VideoCell.swift in Sources */,
 				5AE212E62520D566006832FC /* SelectedVideoController.swift in Sources */,
 				5A330F3924C5C99400C994C5 /* FollowingViewController.swift in Sources */,
+				5A5A9629252927B600A295BC /* Category.swift in Sources */,
 				5AF2353924C5C135008C3F53 /* AppDelegate.swift in Sources */,
 				5AF2353B24C5C135008C3F53 /* SceneDelegate.swift in Sources */,
 				5AA918512524BC6A00450481 /* CategoryCell.swift in Sources */,
