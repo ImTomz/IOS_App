@@ -10,6 +10,8 @@ import UIKit
 
 class CollectionInTableViewCell: UITableViewCell {
     
+    weak var delegate:CategoryRowDelegate?
+    
     fileprivate let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 120.0,height: 200.0)
@@ -53,18 +55,26 @@ class CollectionInTableViewCell: UITableViewCell {
 
 extension CollectionInTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     
+    // Number of sections
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
+    // Number of items in section
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 8
     }
     
+    // Cell for item
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! CategoryCell
         // Configure the cell
         return cell
+    }
+    
+    // Tap event for cell
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.cellTapped()
     }
     
 }

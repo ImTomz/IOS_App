@@ -71,8 +71,17 @@ class FollowingViewController: UIViewController {
 
 }
 
-extension FollowingViewController: UITableViewDelegate,UITableViewDataSource {
+extension FollowingViewController: UITableViewDelegate,UITableViewDataSource,CategoryRowDelegate {
     
+    // Pushing view controller on category cell tap
+    func cellTapped() {
+        let vc = SelectedCategoryController()
+        // Pass data to selected category
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    // Number of rows in section
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (section == 0) {
             return 1
@@ -83,22 +92,30 @@ extension FollowingViewController: UITableViewDelegate,UITableViewDataSource {
         return videos.count
     }
     
+    // Number of sections
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }
     
+    // Height for row
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return indexPath.section == 0 ? 220 : 100
     }
 
+    // Cell for row
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        // Category cell
         if(indexPath.section == 0) {
             let cell = tableView.dequeueReusableCell(withIdentifier: collectionCellId) as! CollectionInTableViewCell
+            cell.delegate = self
             return cell
         }
+        
+        // Video cell
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId) as! VideoCell
         let video:Video?
+        //Number of cells from array
         switch indexPath.section {
         case 1:
             video = live[indexPath.row]
@@ -107,6 +124,7 @@ extension FollowingViewController: UITableViewDelegate,UITableViewDataSource {
         default:
             video = nil
         }
+        // Background color of selected cell
         let bgColorView = UIView()
         bgColorView.backgroundColor = UIColor.gray
         cell.selectedBackgroundView = bgColorView
@@ -114,7 +132,8 @@ extension FollowingViewController: UITableViewDelegate,UITableViewDataSource {
 
         return cell
     }
-
+    
+    // Pushing view controller on table view cell
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if (indexPath.section >= 1){
             let vc = SelectedVideoController()
@@ -122,14 +141,16 @@ extension FollowingViewController: UITableViewDelegate,UITableViewDataSource {
             navigationController?.pushViewController(vc, animated: true)
         }
     }
-
+    
+    // View for header in section
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 30))
         headerView.backgroundColor = UIColor(named: "BackgroundColor")
-
+        
         let label = UILabel()
         label.frame = CGRect(x: 15, y: 5, width: headerView.frame.width-12, height: headerView.frame.height-12)
         
+        // Setting header title
         switch section {
         case 0:
             label.text = "FOLLOWED CATEGORIES"
@@ -140,13 +161,11 @@ extension FollowingViewController: UITableViewDelegate,UITableViewDataSource {
         default:
             label.text = ""
         }
-        
+        // Styling header title
         label.textColor = UIColor(named: "SubTextColor")
         label.font = UIFont.boldSystemFont(ofSize: 14)
 
-
         headerView.addSubview(label)
-
         return headerView
     }
     

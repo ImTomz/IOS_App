@@ -24,7 +24,7 @@ class SelectedVideoController: UIViewController {
         label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
         // Do any additional setup after loading the view.
-        view.backgroundColor = UIColor(red: 34/255, green: 37/255, blue: 38/255, alpha: 1)
+        view.backgroundColor = UIColor(named: "BackgroundColor")
     }
     
     

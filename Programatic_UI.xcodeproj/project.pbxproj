@@ -10,6 +10,8 @@
 		5A330F3924C5C99400C994C5 /* FollowingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A330F3824C5C99400C994C5 /* FollowingViewController.swift */; };
 		5A330F3B24C5D65000C994C5 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A330F3A24C5D65000C994C5 /* VideoCell.swift */; };
 		5A330F3E24C5E9C700C994C5 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A330F3D24C5E9C700C994C5 /* Video.swift */; };
+		5A5A96232528BC1600A295BC /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5A96222528BC1600A295BC /* Protocols.swift */; };
+		5A662BC92527A46F0073D8F1 /* SelectedCategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A662BC82527A46F0073D8F1 /* SelectedCategoryController.swift */; };
 		5AA918512524BC6A00450481 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA918502524BC6A00450481 /* CategoryCell.swift */; };
 		5AA918542524C86F00450481 /* CollectionInTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA918532524C86F00450481 /* CollectionInTableViewCell.swift */; };
 		5AE212E2251FB166006832FC /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE212E1251FB166006832FC /* ProfileController.swift */; };
@@ -25,6 +27,8 @@
 		5A330F3824C5C99400C994C5 /* FollowingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingViewController.swift; sourceTree = "<group>"; };
 		5A330F3A24C5D65000C994C5 /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
 		5A330F3D24C5E9C700C994C5 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		5A5A96222528BC1600A295BC /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		5A662BC82527A46F0073D8F1 /* SelectedCategoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedCategoryController.swift; sourceTree = "<group>"; };
 		5AA918502524BC6A00450481 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		5AA918532524C86F00450481 /* CollectionInTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionInTableViewCell.swift; sourceTree = "<group>"; };
 		5AE212E1251FB166006832FC /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
@@ -57,6 +61,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		5A5A96212528BC0200A295BC /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				5A5A96222528BC1600A295BC /* Protocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		5AE212E0251FB123006832FC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -67,6 +79,7 @@
 				5AE212E52520D566006832FC /* SelectedVideoController.swift */,
 				5AA918502524BC6A00450481 /* CategoryCell.swift */,
 				5AA918532524C86F00450481 /* CollectionInTableViewCell.swift */,
+				5A662BC82527A46F0073D8F1 /* SelectedCategoryController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -90,6 +103,7 @@
 		5AF2353724C5C135008C3F53 /* Programatic_UI */ = {
 			isa = PBXGroup;
 			children = (
+				5A5A96212528BC0200A295BC /* Protocols */,
 				5AE212E0251FB123006832FC /* Controllers */,
 				5A330F3C24C5E70900C994C5 /* Model */,
 				5AF2353824C5C135008C3F53 /* AppDelegate.swift */,
@@ -171,8 +185,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A662BC92527A46F0073D8F1 /* SelectedCategoryController.swift in Sources */,
 				5AE212E2251FB166006832FC /* ProfileController.swift in Sources */,
 				5AF2353D24C5C135008C3F53 /* ViewController.swift in Sources */,
+				5A5A96232528BC1600A295BC /* Protocols.swift in Sources */,
 				5A330F3E24C5E9C700C994C5 /* Video.swift in Sources */,
 				5AA918542524C86F00450481 /* CollectionInTableViewCell.swift in Sources */,
 				5A330F3B24C5D65000C994C5 /* VideoCell.swift in Sources */,
