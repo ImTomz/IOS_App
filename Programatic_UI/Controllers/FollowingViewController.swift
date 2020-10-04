@@ -136,9 +136,8 @@ extension FollowingViewController: UITableViewDelegate,UITableViewDataSource,Cat
     // Pushing view controller on table view cell
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if (indexPath.section >= 1){
-            let vc = SelectedVideoController()
-            vc.text = live[indexPath.row].title
-            navigationController?.pushViewController(vc, animated: true)
+            let videoLauncher = VideoLauncher()
+            videoLauncher.showVideoPlayer()
         }
     }
     

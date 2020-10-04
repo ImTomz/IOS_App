@@ -16,7 +16,7 @@
 		5AA918512524BC6A00450481 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA918502524BC6A00450481 /* CategoryCell.swift */; };
 		5AA918542524C86F00450481 /* CollectionInTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA918532524C86F00450481 /* CollectionInTableViewCell.swift */; };
 		5AE212E2251FB166006832FC /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE212E1251FB166006832FC /* ProfileController.swift */; };
-		5AE212E62520D566006832FC /* SelectedVideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE212E52520D566006832FC /* SelectedVideoController.swift */; };
+		5AEF3681252A02AB00635554 /* VideoLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEF3680252A02AB00635554 /* VideoLauncher.swift */; };
 		5AF2353924C5C135008C3F53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF2353824C5C135008C3F53 /* AppDelegate.swift */; };
 		5AF2353B24C5C135008C3F53 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF2353A24C5C135008C3F53 /* SceneDelegate.swift */; };
 		5AF2353D24C5C135008C3F53 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF2353C24C5C135008C3F53 /* ViewController.swift */; };
@@ -34,7 +34,7 @@
 		5AA918502524BC6A00450481 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		5AA918532524C86F00450481 /* CollectionInTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionInTableViewCell.swift; sourceTree = "<group>"; };
 		5AE212E1251FB166006832FC /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
-		5AE212E52520D566006832FC /* SelectedVideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedVideoController.swift; sourceTree = "<group>"; };
+		5AEF3680252A02AB00635554 /* VideoLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoLauncher.swift; sourceTree = "<group>"; };
 		5AF2353524C5C135008C3F53 /* Programatic_UI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Programatic_UI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AF2353824C5C135008C3F53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AF2353A24C5C135008C3F53 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,19 +72,33 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		5A5A96302529F93900A295BC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5A330F3A24C5D65000C994C5 /* VideoCell.swift */,
+				5AA918502524BC6A00450481 /* CategoryCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		5AE212E0251FB123006832FC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				5AF2353C24C5C135008C3F53 /* ViewController.swift */,
-				5A330F3A24C5D65000C994C5 /* VideoCell.swift */,
 				5A330F3824C5C99400C994C5 /* FollowingViewController.swift */,
 				5AE212E1251FB166006832FC /* ProfileController.swift */,
-				5AE212E52520D566006832FC /* SelectedVideoController.swift */,
-				5AA918502524BC6A00450481 /* CategoryCell.swift */,
 				5AA918532524C86F00450481 /* CollectionInTableViewCell.swift */,
 				5A662BC82527A46F0073D8F1 /* SelectedCategoryController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5AEF367F252A024500635554 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5AEF3680252A02AB00635554 /* VideoLauncher.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		5AF2352C24C5C135008C3F53 = {
@@ -106,9 +120,11 @@
 		5AF2353724C5C135008C3F53 /* Programatic_UI */ = {
 			isa = PBXGroup;
 			children = (
-				5A5A96212528BC0200A295BC /* Protocols */,
-				5AE212E0251FB123006832FC /* Controllers */,
+				5AEF367F252A024500635554 /* Helpers */,
 				5A330F3C24C5E70900C994C5 /* Model */,
+				5A5A96302529F93900A295BC /* View */,
+				5AE212E0251FB123006832FC /* Controllers */,
+				5A5A96212528BC0200A295BC /* Protocols */,
 				5AF2353824C5C135008C3F53 /* AppDelegate.swift */,
 				5AF2353A24C5C135008C3F53 /* SceneDelegate.swift */,
 				5AF2354124C5C137008C3F53 /* Assets.xcassets */,
@@ -191,11 +207,11 @@
 				5A662BC92527A46F0073D8F1 /* SelectedCategoryController.swift in Sources */,
 				5AE212E2251FB166006832FC /* ProfileController.swift in Sources */,
 				5AF2353D24C5C135008C3F53 /* ViewController.swift in Sources */,
+				5AEF3681252A02AB00635554 /* VideoLauncher.swift in Sources */,
 				5A5A96232528BC1600A295BC /* Protocols.swift in Sources */,
 				5A330F3E24C5E9C700C994C5 /* Video.swift in Sources */,
 				5AA918542524C86F00450481 /* CollectionInTableViewCell.swift in Sources */,
 				5A330F3B24C5D65000C994C5 /* VideoCell.swift in Sources */,
-				5AE212E62520D566006832FC /* SelectedVideoController.swift in Sources */,
 				5A330F3924C5C99400C994C5 /* FollowingViewController.swift in Sources */,
 				5A5A9629252927B600A295BC /* Category.swift in Sources */,
 				5AF2353924C5C135008C3F53 /* AppDelegate.swift in Sources */,
