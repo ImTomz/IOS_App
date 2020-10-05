@@ -138,6 +138,7 @@ extension FollowingViewController: UITableViewDelegate,UITableViewDataSource,Cat
         if (indexPath.section >= 1){
             let videoLauncher = VideoLauncher()
             videoLauncher.showVideoPlayer()
+            tableView.deselectRow(at: indexPath, animated: true)
         }
     }
     
