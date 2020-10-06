@@ -10,33 +10,11 @@ import UIKit
 
 class VideoPlayerView: UIView {
     
-    private let btn: UIButton = {
-        let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 28, height: 16))
-        btn.addTarget(self, action: #selector(checkAction), for: .touchUpInside)
-        btn.setImage(UIImage(systemName: "chevron.down"), for: .normal)
-        btn.imageView?.contentMode = .scaleAspectFit
-        btn.imageView?.tintColor = UIColor(named: "SubTextColor")
-        return btn
-    }()
-    
-    var title: String?
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         self.backgroundColor = .white
-        self.addSubview(btn)
-        btn.center = self.center
-    }
-    
-    @objc func checkAction() {
-        // Do what you want
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
-            self.window?.viewWithTag(100)?.frame = CGRect(x: 0, y: (self.window?.frame.height)!, width: (self.window?.frame.width)!, height: 10)
-        }, completion: { (completedAnimation) in
-            self.window?.viewWithTag(100)!.removeFromSuperview()
-        })
-       
+        addSubview(VideoPlayerControls(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)))
     }
     
     required init?(coder: NSCoder) {
