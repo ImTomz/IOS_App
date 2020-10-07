@@ -16,8 +16,15 @@ class VideoPlayerControls: UIView {
         btn.addTarget(self, action: #selector(checkAction), for: .touchUpInside)
         btn.setImage(UIImage(systemName: "chevron.down"), for: .normal)
         btn.imageView?.contentMode = .scaleAspectFit
-        btn.imageView?.tintColor = UIColor(named: "SubTextColor")
+        btn.imageView?.tintColor = .white
         btn.translatesAutoresizingMaskIntoConstraints = false
+        return btn
+    }()
+    
+    private let playAndPauseBtn: UIButton = {
+        let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        btn.setImage(UIImage(systemName: "play.fill"), for: .normal)
+        btn.imageView?.tintColor = .white
         return btn
     }()
     
@@ -25,6 +32,7 @@ class VideoPlayerControls: UIView {
         super.init(frame: frame)
         
         self.addSubview(hideBtn)
+        self.addSubview(playAndPauseBtn)
         setupBtns()
     }
     
@@ -43,8 +51,10 @@ class VideoPlayerControls: UIView {
             hideBtn.topAnchor.constraint(equalTo: topAnchor, constant: 15),
             hideBtn.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
             hideBtn.widthAnchor.constraint(equalToConstant: 28),
-            hideBtn.heightAnchor.constraint(equalToConstant: 16)
+            
         ])
+        
+        playAndPauseBtn.center = center
     }
     
     required init?(coder: NSCoder) {
