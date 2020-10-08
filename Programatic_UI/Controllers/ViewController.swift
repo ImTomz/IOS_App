@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    //Next page button
     private let nextPageBtn: UIButton = {
         let nextPageBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 200, height: 52))
         nextPageBtn.setTitle("Next", for: .normal)
@@ -20,6 +21,7 @@ class ViewController: UIViewController {
         return nextPageBtn
     }()
     
+    //Setup tab bar
     private let tabBarVC: UITabBarController = {
         let tabBarVC = UITabBarController()
         let vc1 = UINavigationController(rootViewController: FollowingViewController())
@@ -62,6 +64,7 @@ class ViewController: UIViewController {
         
     }
     
+    //Action for next button
     @objc func nextBtnTapped() {
         present(tabBarVC, animated: true)
     }

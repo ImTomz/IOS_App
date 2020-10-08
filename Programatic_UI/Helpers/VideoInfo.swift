@@ -10,6 +10,7 @@ import UIKit
 
 class VideoInfo: UIView {
     
+    //User info stack view
     private let userInfoView: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -21,6 +22,7 @@ class VideoInfo: UIView {
         return stackView
     }()
     
+    //Name title tags stack view
     private let nameTitleAndTagsView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -29,6 +31,7 @@ class VideoInfo: UIView {
         return stackView
     }()
     
+    //User image view
     private let userImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = .white
@@ -39,6 +42,7 @@ class VideoInfo: UIView {
         return imageView
     }()
     
+    //User name label
     private let nameLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 18))
         label.text = "First name"
@@ -46,6 +50,7 @@ class VideoInfo: UIView {
         return label
     }()
     
+    //Title label
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Title for live stream"
@@ -56,6 +61,7 @@ class VideoInfo: UIView {
         return label
     }()
     
+    //Subscribe button
     private let subBtn: UIButton = {
         let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 80, height: 30))
         btn.setTitle("Subscribe", for: .normal)
@@ -66,6 +72,7 @@ class VideoInfo: UIView {
         return btn
     }()
     
+    //Tag button
     private let tagBtn: UIButton = {
         let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 10))
         btn.setTitle("English", for: .normal)
@@ -88,11 +95,11 @@ class VideoInfo: UIView {
         nameTitleAndTagsView.addArrangedSubview(nameLabel)
         nameTitleAndTagsView.addArrangedSubview(titleLabel)
         nameTitleAndTagsView.addArrangedSubview(tagBtn)
-        setupStackViewConstraints()
+        setupUserInfoStackViewConstraints()
     }
     
-    
-    func setupStackViewConstraints() {
+    //Setup user info stack view constraints
+    func setupUserInfoStackViewConstraints() {
         NSLayoutConstraint.activate([
             userInfoView.topAnchor.constraint(equalTo: topAnchor),
             userInfoView.leadingAnchor.constraint(equalTo: leadingAnchor),

@@ -9,23 +9,26 @@
 import UIKit
 
 class CollectionInTableViewCell: UITableViewCell {
-    
+
+    //Delegate for selection
     weak var delegate:CategoryRowDelegate?
     
+    //Categories dummy data
     var categories: [Category] = [Category(game: "World of Warcraft", viewers: "27K"),
                                   Category(game: "League of Legends", viewers: "57K"),
                                   Category(game: "Fortnite", viewers: "32K"),
                                   Category(game: "Among us", viewers: "25K"),
                                   Category(game: "Just Chatting", viewers: "156K"),]
     
+    //Collection view setup
     fileprivate let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 120.0,height: 200.0)
         layout.scrollDirection = .horizontal
         layout.sectionInset = UIEdgeInsets(top: 0,
-                                                  left: 15,
-                                                  bottom: 0,
-                                                  right: 15)
+                                           left: 15,
+                                           bottom: 0,
+                                           right: 15)
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 10
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -50,6 +53,7 @@ class CollectionInTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //Setup for collection view constraints
     func setupCollectionViewConstraints() {
         collectionView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
@@ -81,7 +85,7 @@ extension CollectionInTableViewCell: UICollectionViewDelegate, UICollectionViewD
         return cell
     }
     
-    // Tap event for cell
+    // Tap event for cell from custom delegate
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         delegate?.cellTapped()
     }

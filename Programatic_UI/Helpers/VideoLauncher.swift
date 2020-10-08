@@ -43,7 +43,8 @@ class VideoLauncher: NSObject {
         view.addSubview(videoInfoView)
         
         window.addSubview(view)
-     
+        
+        //Open animation for video player
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
             view.frame = window.frame
         }, completion: { (completedAnimation) in
