@@ -15,7 +15,7 @@ class VideoInfo: UIView {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .horizontal
-        stackView.spacing = 5
+        stackView.spacing = 8
         stackView.alignment = .top
         stackView.layoutMargins = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         stackView.isLayoutMarginsRelativeArrangement = true
@@ -34,7 +34,7 @@ class VideoInfo: UIView {
     //User image view
     private let userImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .white
+        imageView.backgroundColor = UIColor(named: "TextColor")
         imageView.layer.cornerRadius = 20
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.widthAnchor.constraint(equalToConstant: 40).isActive = true
@@ -68,7 +68,7 @@ class VideoInfo: UIView {
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
         btn.backgroundColor = UIColor(named: "Purple")
         btn.layer.cornerRadius = 5
-        btn.contentEdgeInsets = UIEdgeInsets(top: 5,left: 5,bottom: 5,right: 5)
+        btn.contentEdgeInsets = UIEdgeInsets(top: 8,left: 10,bottom: 8,right: 10)
         return btn
     }()
     
@@ -84,17 +84,79 @@ class VideoInfo: UIView {
         return btn
     }()
     
+    //Follow, notifications and subscribe buttons
+    private let actionButtonsView: UIStackView = {
+        let view = UIStackView()
+        view.backgroundColor = UIColor(named: "BackgroundColor")
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.axis = .horizontal
+        view.spacing = 8
+        view.alignment = .center
+        view.distribution = .equalSpacing
+        view.layoutMargins = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
+        view.isLayoutMarginsRelativeArrangement = true
+        view.addBottomBorder(with: .darkGray, andWidth: 0.5)
+        return view
+    }()
+    
+    //Follow button
+    private let followBtn: UIButton = {
+        let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 30))
+        btn.setImage(UIImage(systemName: "heart"), for: .normal)
+        btn.setTitle("Following", for: .normal)
+        btn.layer.cornerRadius = 8
+        btn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        btn.imageView?.tintColor = UIColor(named: "TextColor")
+        btn.tintColor = UIColor(named: "TextColor")
+        btn.alignImageAndTitleVertically(imageOffSet: 30)
+        return btn
+    }()
+    
+    //Notifications button
+    private let notificationsBtn: UIButton = {
+        let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 30))
+        btn.setImage(UIImage(systemName: "bell"), for: .normal)
+        btn.setTitle("Notifications", for: .normal)
+        btn.layer.cornerRadius = 8
+        btn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        btn.imageView?.tintColor = UIColor(named: "TextColor")
+        btn.tintColor = UIColor(named: "TextColor")
+        btn.alignImageAndTitleVertically(imageOffSet: 40)
+        return btn
+    }()
+    
+    //Subscribe button
+    private let subscribeBtn: UIButton = {
+        let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 30))
+        btn.setImage(UIImage(systemName: "star"), for: .normal)
+        btn.setTitle("Subscribe", for: .normal)
+        btn.layer.cornerRadius = 8
+        btn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        btn.imageView?.tintColor = UIColor(named: "TextColor")
+        btn.tintColor = UIColor(named: "TextColor")
+        btn.alignImageAndTitleVertically(imageOffSet: 35)
+        return btn
+    }()
+    
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         self.backgroundColor = UIColor(named: "BackgroundColor")
         addSubview(userInfoView)
+        addSubview(actionButtonsView)
+        
+        //User info view
         userInfoView.addArrangedSubview(userImageView)
         userInfoView.addArrangedSubview(nameTitleAndTagsView)
         userInfoView.addArrangedSubview(subBtn)
         nameTitleAndTagsView.addArrangedSubview(nameLabel)
         nameTitleAndTagsView.addArrangedSubview(titleLabel)
         nameTitleAndTagsView.addArrangedSubview(tagBtn)
+        actionButtonsView.addArrangedSubview(followBtn)
+        actionButtonsView.addArrangedSubview(notificationsBtn)
+        actionButtonsView.addArrangedSubview(subscribeBtn)
         setupUserInfoStackViewConstraints()
     }
     
@@ -105,6 +167,13 @@ class VideoInfo: UIView {
             userInfoView.leadingAnchor.constraint(equalTo: leadingAnchor),
             userInfoView.widthAnchor.constraint(equalTo: widthAnchor),
             userInfoView.heightAnchor.constraint(lessThanOrEqualToConstant: 250)
+        ])
+        
+        NSLayoutConstraint.activate([
+            actionButtonsView.topAnchor.constraint(equalTo: userInfoView.bottomAnchor),
+            actionButtonsView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            actionButtonsView.widthAnchor.constraint(equalTo: widthAnchor),
+            actionButtonsView.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
     
