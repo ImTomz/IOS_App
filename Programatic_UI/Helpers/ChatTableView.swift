@@ -16,7 +16,9 @@ class ChatTableView: UITableView {
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
         
-        self.backgroundColor = .red
+        self.backgroundColor = UIColor(named: "BackgroundColor")
+        self.translatesAutoresizingMaskIntoConstraints = false
+        
     }
     
     required init?(coder: NSCoder) {
@@ -32,7 +34,7 @@ extension ChatTableView : UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: chatCellID )
-        cell?.backgroundColor = .green
+        
         return cell!
     }
     

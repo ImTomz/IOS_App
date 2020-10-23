@@ -8,6 +8,7 @@
 
 import UIKit
 
+//MARK: - Borders for UIView
 extension UIView {
     
     func addTopBorder(with color: UIColor?, andWidth borderWidth: CGFloat) {
@@ -42,6 +43,8 @@ extension UIView {
         addSubview(border)
     }
 }
+
+//MARK: - Vertical aligment for UIButton
 
 extension UIButton {
 

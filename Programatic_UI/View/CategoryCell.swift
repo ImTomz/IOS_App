@@ -9,7 +9,9 @@
 import UIKit
 
 class CategoryCell: UICollectionViewCell {
-    private let image : UIImageView = {
+    
+    // Category image
+    private let image: UIImageView = {
         let image = UIImageView()
         image.backgroundColor = .black
         image.clipsToBounds = true
@@ -18,7 +20,8 @@ class CategoryCell: UICollectionViewCell {
         return image
     }()
     
-    private let title : UILabel = {
+    // Category title
+    private let title: UILabel = {
         let title = UILabel()
         title.text = "Title"
         title.textColor = UIColor(named: "TextColor")
@@ -27,6 +30,7 @@ class CategoryCell: UICollectionViewCell {
         return title
     }()
     
+    //Category viewers number
     private let viewersLabel: UILabel = {
         let label = UILabel()
         label.text = "123"
@@ -36,6 +40,7 @@ class CategoryCell: UICollectionViewCell {
         return label
     }()
     
+    //Viewer icon
     private let viewerIcon: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(systemName: "circle.fill")
@@ -45,6 +50,7 @@ class CategoryCell: UICollectionViewCell {
         return image
     }()
     
+    //MARK: - init
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
@@ -59,13 +65,19 @@ class CategoryCell: UICollectionViewCell {
         setupViewersIconConstraints()
     }
     
+    //MARK: - Setters
+    
+    // Setter for title
     func setGame(category: Category) {
         title.text = category.game
     }
     
+    // Setter for viewers
     func setViewers(category: Category) {
         viewersLabel.text = category.viewers
     }
+    
+    // MARK: - Constaints
     
     func setupImageConstraints() {
         

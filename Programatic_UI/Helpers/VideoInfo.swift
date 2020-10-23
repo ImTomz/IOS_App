@@ -22,6 +22,8 @@ class VideoInfo: UIView {
         return stackView
     }()
     
+    //MARK: - User name,title,image,tags,subscribe
+    
     //Name title tags stack view
     private let nameTitleAndTagsView: UIStackView = {
         let stackView = UIStackView()
@@ -84,6 +86,8 @@ class VideoInfo: UIView {
         return btn
     }()
     
+    // MARK: -  Follow,Notifications,Subscribe buttons
+    
     //Follow, notifications and subscribe buttons
     private let actionButtonsView: UIStackView = {
         let view = UIStackView()
@@ -138,6 +142,12 @@ class VideoInfo: UIView {
         return btn
     }()
     
+    //MARK: - Chat
+        
+    //Chat table view
+    private let chatView = ChatTableView() //init setting in file
+    
+    //Text input
     
     
     override init(frame: CGRect) {
@@ -146,6 +156,7 @@ class VideoInfo: UIView {
         self.backgroundColor = UIColor(named: "BackgroundColor")
         addSubview(userInfoView)
         addSubview(actionButtonsView)
+        addSubview(chatView)
         
         //User info view
         userInfoView.addArrangedSubview(userImageView)
@@ -166,14 +177,21 @@ class VideoInfo: UIView {
             userInfoView.topAnchor.constraint(equalTo: topAnchor),
             userInfoView.leadingAnchor.constraint(equalTo: leadingAnchor),
             userInfoView.widthAnchor.constraint(equalTo: widthAnchor),
-            userInfoView.heightAnchor.constraint(lessThanOrEqualToConstant: 250)
+            userInfoView.heightAnchor.constraint(lessThanOrEqualToConstant: 200)
         ])
         
         NSLayoutConstraint.activate([
             actionButtonsView.topAnchor.constraint(equalTo: userInfoView.bottomAnchor),
             actionButtonsView.leadingAnchor.constraint(equalTo: leadingAnchor),
             actionButtonsView.widthAnchor.constraint(equalTo: widthAnchor),
-            actionButtonsView.heightAnchor.constraint(equalToConstant: 50)
+            actionButtonsView.heightAnchor.constraint(equalToConstant: 55)
+        ])
+        
+        NSLayoutConstraint.activate([
+            chatView.topAnchor.constraint(equalTo: actionButtonsView.bottomAnchor,constant: 1 ), //+1 horizontal line
+            chatView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            chatView.widthAnchor.constraint(equalTo: widthAnchor),
+            chatView.heightAnchor.constraint(equalToConstant: 200)
         ])
     }
     

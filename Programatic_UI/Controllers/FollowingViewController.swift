@@ -11,6 +11,8 @@ import UIKit
 class FollowingViewController: UIViewController {
     
     let tableView = UITableView()
+    
+    // Dummy data
     var live: [Video] = [Video(title: "First title"),
                          Video(title: "Second"),
                          Video(title: "Third"),]
@@ -23,6 +25,8 @@ class FollowingViewController: UIViewController {
                            Video(title: "Second"),
                            Video(title: "Second"),]
     
+    
+    //cell ids
     let cellId = "cellId"
     let collectionCellId = "collectionCellId"
     
@@ -70,6 +74,7 @@ class FollowingViewController: UIViewController {
     }
 
 }
+//MARK: - Delegates for table view
 
 extension FollowingViewController: UITableViewDelegate,UITableViewDataSource,CategoryRowDelegate {
     

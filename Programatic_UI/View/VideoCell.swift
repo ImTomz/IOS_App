@@ -10,6 +10,7 @@ import UIKit
 
 class VideoCell: UITableViewCell {
     
+    // Video image
     private let videoImageView: UIImageView = {
         let videoImageView = UIImageView()
         videoImageView.clipsToBounds = true
@@ -17,6 +18,7 @@ class VideoCell: UITableViewCell {
         return videoImageView
     }()
     
+    // User image
     private let profileImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
@@ -25,6 +27,7 @@ class VideoCell: UITableViewCell {
         return imageView
     }()
     
+    // Game title
     private let gameLabel: UILabel = {
         let label = UILabel()
         label.text = "Game"
@@ -33,6 +36,7 @@ class VideoCell: UITableViewCell {
         return label
     }()
     
+    // User name
     private let profileNameLabel: UILabel = {
         let videoTextLabel = UILabel()
         videoTextLabel.textColor = UIColor(named: "TextColor")
@@ -40,6 +44,7 @@ class VideoCell: UITableViewCell {
         return videoTextLabel
     }()
     
+    // Description
     private let videoDescriptionLabel: UILabel = {
         let videoTextLabel = UILabel()
         videoTextLabel.textColor = UIColor(named: "SubTextColor")
@@ -47,6 +52,8 @@ class VideoCell: UITableViewCell {
         videoTextLabel.text = "Description"
         return videoTextLabel
     }()
+    
+    //MARK: - init
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -64,9 +71,13 @@ class VideoCell: UITableViewCell {
         
     }
     
+    //MARK: - Setters
+    
     func set(video:Video) {
         profileNameLabel.text = video.title
     }
+    
+    //MARK: - Constraints
     
     func setupVideoImageViewConstraints() {
         videoImageView.translatesAutoresizingMaskIntoConstraints = false
